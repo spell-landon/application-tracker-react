@@ -1,0 +1,23 @@
+.header {
+  /* border: 1px solid blue; */
+}
+.header > nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem;
+  background-color: rgb(241, 241, 241);
+}
+.header > nav > h1 {
+  font-size: 18px;
+}
+.header > nav > div > button,
+.header > nav > div > input {
+  margin: 0 0.5rem;
+  padding: 0.2rem;
+}
+.header input {
+  padding: 0.2rem 0.7rem;
+  margin: 0 0.2rem;
+}

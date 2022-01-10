@@ -1,0 +1,14 @@
+.homeContainer {
+  height: 100%;
+  text-align: center;
+}
+.homeContainer > h1 {
+  margin: 1rem auto;
+}
+.homeContainer > p {
+  width: 500px;
+  margin: 1rem auto;
+}
+.homeContainer button {
+  padding: 0.2rem 0.7rem;
+}

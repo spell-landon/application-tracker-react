@@ -1,0 +1,26 @@
+.loginContainer {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login {
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  padding: 2rem;
+}
+.login > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.login > form > #loginBtn {
+  padding: 0.2rem 0.7rem;
+}

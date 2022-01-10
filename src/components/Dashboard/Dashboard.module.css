@@ -1,0 +1,13 @@
+.dbContainer {
+    height: 100%;
+    
+}
+.dbContainer > h1 {
+    font-size: 24px;
+}
+.dbContainer i {
+    font-size: 12px;
+}
+.dbContainer table {
+    width: 100%;
+}
