@@ -1,23 +1,58 @@
 import React, { useState } from 'react';
 import styles from './AddInterview.module.css';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react/cjs/react.development';
 
 function AddInterview({ data, setData }) {
   const navigate = useNavigate();
-  const [date, setDate] = useState('');
-  const [dateString, setDateString] = useState('');
+
+  const index = data.length;
+  const [newInterview, setNewInterview] = useState({
+    index: index,
+    date: '',
+    time: '',
+    company: '',
+    interviewer: '',
+    interviewerEmail: '',
+    jobTitle: '',
+    salary: '',
+  });
   function addItem(e) {
     e.preventDefault();
-    console.log('item has been added');
-    let tempInterviews = [...data];
-    
+    const tempInterviews = [...data];
+    tempInterviews.push(newInterview);
+    setData(tempInterviews);
     navigate('/dashboard');
   }
-  function handleInputChange(event) {
+  function dateChange(event) {
     event.preventDefault();
-    setDate(event.target.value);
-    setDateString(event.target.value);
+    setNewInterview({...newInterview, date: event.target.value})
   }
+  function timeChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, time: event.target.value });
+  }
+  function companyChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, company: event.target.value });
+  }
+  function interviewerChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, interviewer: event.target.value });
+  }
+  function intEmailChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, interviewerEmail: event.target.value });
+  }
+  function jobTitleChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, jobTitle: event.target.value });
+  }
+  function salaryChange(event) {
+    event.preventDefault();
+        setNewInterview({ ...newInterview, salary: event.target.value });
+  }
+
   return (
     <div className={styles.addContainer}>
       <section className={styles.addInterview}>
@@ -25,28 +60,62 @@ function AddInterview({ data, setData }) {
         <form className={styles.jobInput} onSubmit={addItem}>
           {/* Date */}
           <label htmlFor='date'>Interview Date: </label>
-          <input type='date' id='date' />
+          <input
+            type='date'
+            id='date'
+            value={newInterview.date}
+            onChange={dateChange}
+          />
           {/* Time */}
           <label htmlFor='time'>Interview time: </label>
-          <input type='time' id='time' />
-
+          <input
+            type='time'
+            id='time'
+            value={newInterview.time}
+            onChange={timeChange}
+          />
           {/* Company */}
           <label htmlFor='company'>Company: </label>
-          <input type='text' id='company' />
+          <input
+            type='text'
+            id='company'
+            value={newInterview.company}
+            onChange={companyChange}
+          />
           {/* Interviewer */}
           <label htmlFor='interviewer'>Interviewer Name: </label>
-          <input type='text' id='interviewer' />
+          <input
+            type='text'
+            id='interviewer'
+            value={newInterview.interviewer}
+            onChange={interviewerChange}
+          />
           {/* Interviewer Email */}
           <label htmlFor='interviewer-email'>Interviewer Email: </label>
-          <input type='text' id='interviewer-email' />
+          <input
+            type='text'
+            id='interviewer-email'
+            value={newInterview.intEmail}
+            onChange={intEmailChange}
+          />
           {/* Job Title */}
           <label htmlFor='job-title'>Job Title: </label>
-          <input type='text' id='job-title' />
+          <input
+            type='text'
+            id='job-title'
+            value={newInterview.jobTitle}
+            onChange={jobTitleChange}
+          />
           {/* Salary */}
           <label htmlFor='salary'>Salary: </label>
-          <input type='number' id='salary' />
+          <input
+            type='number'
+            id='salary'
+            value={newInterview.salary}
+            onChange={salaryChange}
+          />
           {/* Remote */}
-          <label htmlFor='remote'>Option For Remote Work? </label>
+          {/* <label htmlFor='remote'>Option For Remote Work? </label>
           <div className={styles.remoteContainer}>
             <div className={styles.remoteYes}>
               <input type='radio' name='remote' id='remote-yes' value='Yes' />
@@ -56,9 +125,9 @@ function AddInterview({ data, setData }) {
               <input type='radio' name='remote' id='remote-no' value='No' />
               <label htmlFor='remote-no'>No</label>
             </div>
-          </div>
+          </div> */}
           {/* Second Interview */}
-          <label htmlFor='second'>
+          {/* <label htmlFor='second'>
             Did you get asked to come back for a second interview?{' '}
           </label>
           <div className={styles.secondContainer}>
@@ -70,7 +139,7 @@ function AddInterview({ data, setData }) {
               <input type='radio' name='second' id='second-no' value='No' />
               <label htmlFor='second-no'>No</label>
             </div>
-          </div>
+          </div> */}
           {/* Submit */}
           <input type='submit' value='Add' id={styles.addBtn} />
         </form>
