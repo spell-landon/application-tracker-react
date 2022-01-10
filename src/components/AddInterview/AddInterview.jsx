@@ -16,6 +16,8 @@ function AddInterview({ data, setData }) {
     interviewerEmail: '',
     jobTitle: '',
     salary: '',
+    // remote: '',
+    // secondInterview: '',
   });
   function addItem(e) {
     e.preventDefault();
@@ -26,31 +28,31 @@ function AddInterview({ data, setData }) {
   }
   function dateChange(event) {
     event.preventDefault();
-    setNewInterview({...newInterview, date: event.target.value})
+    setNewInterview({ ...newInterview, date: event.target.value });
   }
   function timeChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, time: event.target.value });
+    setNewInterview({ ...newInterview, time: event.target.value });
   }
   function companyChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, company: event.target.value });
+    setNewInterview({ ...newInterview, company: event.target.value });
   }
   function interviewerChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, interviewer: event.target.value });
+    setNewInterview({ ...newInterview, interviewer: event.target.value });
   }
   function intEmailChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, interviewerEmail: event.target.value });
+    setNewInterview({ ...newInterview, interviewerEmail: event.target.value });
   }
   function jobTitleChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, jobTitle: event.target.value });
+    setNewInterview({ ...newInterview, jobTitle: event.target.value });
   }
   function salaryChange(event) {
     event.preventDefault();
-        setNewInterview({ ...newInterview, salary: event.target.value });
+    setNewInterview({ ...newInterview, salary: event.target.value });
   }
 
   return (
@@ -118,11 +120,23 @@ function AddInterview({ data, setData }) {
           {/* <label htmlFor='remote'>Option For Remote Work? </label>
           <div className={styles.remoteContainer}>
             <div className={styles.remoteYes}>
-              <input type='radio' name='remote' id='remote-yes' value='Yes' />
+              <input
+                type='radio'
+                name='remote'
+                id='remote-yes'
+                value='Yes'
+                onChange={remoteChange}
+              />
               <label htmlFor='remote-yes'>Yes</label>
             </div>
             <div className={styles.remoteNo}>
-              <input type='radio' name='remote' id='remote-no' value='No' />
+              <input
+                type='radio'
+                name='remote'
+                id='remote-no'
+                value='No'
+                onChange={remoteChange}
+              />
               <label htmlFor='remote-no'>No</label>
             </div>
           </div> */}

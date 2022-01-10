@@ -10,4 +10,14 @@
 }
 .dbContainer table {
     width: 100%;
+    border: none;
+    /* background-color: blue; */
+
+}
+.dbContainer > table > tbody {
+    /* background-color: white; */
+}
+.dbContainer > table > tbody > tr {
+    border-bottom: 1px solid black;
+    border: none;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
+import { moment } from 'moment';
 
 function Dashboard({ data, setData }) {
   const { user, setUser } = useContext(UserContext);
@@ -48,11 +49,11 @@ function Dashboard({ data, setData }) {
               Salary <i className='fas fa-filter'></i>
             </th>
             {/* <th>
-            Remote <i className='fas fa-filter'></i>
-          </th>
-          <th>
-            Second Interview <i className='fas fa-filter'></i>
-          </th> */}
+              Remote <i className='fas fa-filter'></i>
+            </th>
+            <th>
+              Second Interview <i className='fas fa-filter'></i>
+            </th> */}
           </tr>
         </thead>
         <tbody>
