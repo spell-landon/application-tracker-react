@@ -21,7 +21,7 @@ function App() {
       interviewer: 'David Myers',
       interviewerEmail: 'Myers.David@gmail.com',
       jobTitle: 'Software Engineer',
-      salary: '80000',
+      salary: '50000',
     },
     {
       index: 1,
@@ -41,7 +41,7 @@ function App() {
       interviewer: 'Fern Plant',
       interviewerEmail: 'im_not_a_plant@hotmail.com',
       jobTitle: 'UI Design',
-      salary: '79500',
+      salary: '64500',
     },
     {
       index: 3,
@@ -51,7 +51,7 @@ function App() {
       interviewer: 'Bruce Willis',
       interviewerEmail: 'therealbrucewillis@yahoo.com',
       jobTitle: 'Full Stack Developer',
-      salary: '109000',
+      salary: '1090000',
     },
     {
       index: 4,
@@ -61,7 +61,7 @@ function App() {
       interviewer: 'George Watson',
       interviewerEmail: 'watson-george@telegram.com',
       jobTitle: 'Software Engineer',
-      salary: '99000',
+      salary: '81000',
     },
   ]);
   console.log(data);
