@@ -45,7 +45,7 @@ function Login(props) {
             <input
               id='password'
               type='text'
-              onChange={handleChange}
+              // onChange={handleChange}
               value=''
               autoComplete='off'
             />

@@ -59,7 +59,7 @@ function AddInterview({ data, setData }) {
   return (
     <div className={styles.addContainer}>
       <section className={styles.addInterview}>
-        <h1>Add an interview to start tracking</h1>
+        <h1>Track a new interview</h1>
         <form className={styles.jobInput} onSubmit={addItem}>
           {/* Date */}
           <label htmlFor='date'>Interview Date: </label>
@@ -68,6 +68,7 @@ function AddInterview({ data, setData }) {
             id='date'
             value={newInterview.date}
             onChange={dateChange}
+            autoComplete='off'
           />
           {/* Time */}
           <label htmlFor='time'>Interview time: </label>
@@ -76,6 +77,7 @@ function AddInterview({ data, setData }) {
             id='time'
             value={newInterview.time}
             onChange={timeChange}
+            autoComplete='off'
           />
           {/* Company */}
           <label htmlFor='company'>Company: </label>
@@ -84,6 +86,7 @@ function AddInterview({ data, setData }) {
             id='company'
             value={newInterview.company}
             onChange={companyChange}
+            autoComplete='off'
           />
           {/* Interviewer */}
           <label htmlFor='interviewer'>Interviewer Name: </label>
@@ -92,6 +95,7 @@ function AddInterview({ data, setData }) {
             id='interviewer'
             value={newInterview.interviewer}
             onChange={interviewerChange}
+            autoComplete='off'
           />
           {/* Interviewer Email */}
           <label htmlFor='interviewer-email'>Interviewer Email: </label>
@@ -100,6 +104,7 @@ function AddInterview({ data, setData }) {
             id='interviewer-email'
             value={newInterview.intEmail}
             onChange={intEmailChange}
+            autoComplete='off'
           />
           {/* Job Title */}
           <label htmlFor='job-title'>Job Title: </label>
@@ -108,6 +113,7 @@ function AddInterview({ data, setData }) {
             id='job-title'
             value={newInterview.jobTitle}
             onChange={jobTitleChange}
+            autoComplete='off'
           />
           {/* Salary */}
           <label htmlFor='salary'>Salary: </label>
@@ -116,6 +122,7 @@ function AddInterview({ data, setData }) {
             id='salary'
             value={newInterview.salary}
             onChange={salaryChange}
+            autoComplete='off'
           />
           {/* Remote */}
           {/* <label htmlFor='remote'>Option For Remote Work? </label>
