@@ -37,7 +37,33 @@
 }
 .dbContainer > table > tbody > tr:nth-child(even) {
   background-color: rgb(245, 245, 245);
+  animation: fadeFromLeft 1s ease forwards;
 }
 .dbContainer > table > tbody > tr:nth-child(odd) {
   background-color: white;
+  animation: fadeFromRight 1s ease forwards;
+}
+.dbContainer > table > tbody > tr:hover {
+  /* cursor: default; */
+  background-color: rgb(235, 235, 235);
+}
+@keyframes fadeFromLeft {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }

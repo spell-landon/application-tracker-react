@@ -15,16 +15,15 @@ function Dashboard({ data, setData }) {
       navigate('/login');
     }
   }, []);
-  useEffect(() => {
-    return data;
-  }, [data]);
+  const name = user.username.charAt(0).toUpperCase() + user.username.slice(1);
+  // useEffect(() => {
+  //   return data;
+  // }, [data]);
 
   return (
     <div className={styles.dbContainer}>
-      <h1>Welcome back, {user.username}!</h1>
-      <p>
-        You last logged in on {user.lastLogIn}.
-      </p>
+      <h1>Welcome back, {name}!</h1>
+      <p>You last logged in on {user.lastLogIn}.</p>
       <table className='table-sortable'>
         <thead>
           <tr>
