@@ -38,6 +38,7 @@ function Navigation(props) {
                 onClick={() => {
                   handleLogout();
                 }}
+                className={styles.logoutBtn}
               />
             </Link>
           ) : null}

@@ -19,12 +19,25 @@
 .dbContainer table {
   width: 100%;
   border: none;
-  /* background-color: blue; */
+  padding: 0;
+  background-color: rgb(240, 240, 240);
+}
+.dbContainer > table > thead > tr > th {
+  width: fit-content;
+  cursor: pointer;
+}
+.dbContainer > table > thead > tr > th:hover {
+  color: rgb(90, 90, 90);
 }
 .dbContainer > table > tbody {
-  /* background-color: white; */
 }
-.dbContainer > table > tbody > tr {
-  border-bottom: 1px solid black;
+.dbContainer > table > tbody > tr > td {
   border: none;
+  padding: 0.2rem 0.5rem;
+}
+.dbContainer > table > tbody > tr:nth-child(even) {
+  background-color: rgb(245, 245, 245);
+}
+.dbContainer > table > tbody > tr:nth-child(odd) {
+  background-color: white;
 }

@@ -26,7 +26,8 @@
   margin: 0 0.2rem;
 }
 .header input,
-.header button {
+.header button,
+.logoutBtn {
   padding: 0.3rem 0.7rem;
   border: none;
   background-color: rgb(207, 207, 207);
@@ -42,4 +43,7 @@
 }
 .header input:hover {
   background-color: rgb(185, 185, 185);
+}
+.header .logoutBtn:hover {
+  background-color: rgb(192, 163, 163);
 }
