@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
+import loginIcon from '../../assets/login.png';
 
 function Login(props) {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function Login(props) {
       <div className={styles.login}>
         {!user.username ? (
           <form onSubmit={handleSubmit}>
+            <img src={loginIcon} alt='login icon' width='250px' />
             <label htmlFor='username'>Username:</label>
             <input
               id='username'
@@ -38,6 +40,14 @@ function Login(props) {
               value={searchString}
               autoComplete='off'
               required
+            />
+            <label htmlFor='password'>Password:</label>
+            <input
+              id='password'
+              type='text'
+              onChange={handleChange}
+              value=''
+              autoComplete='off'
             />
             <input type='submit' value='Login' id={styles.loginBtn} />
           </form>
