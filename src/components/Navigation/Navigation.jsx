@@ -15,7 +15,7 @@ function Navigation(props) {
   return (
     <header className={styles.header}>
       <nav>
-        <Link to='/'>
+        <Link to='/' className={styles.title}>
           <h1>Job Search Tracker</h1>
         </Link>
 
