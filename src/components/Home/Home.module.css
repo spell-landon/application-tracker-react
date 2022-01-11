@@ -17,6 +17,24 @@
 }
 .homeContainer > section {
   margin-top: 1rem;
+  /* animation: opacityFade 1s ease-in forwards; */
+  /* animation-delay: 1s; */
+  /* opacity: 0; */
+}
+.homeContainer > section > #first {
+  opacity: 0;
+  animation: opacityFade 1s ease-in forwards;
+  animation-delay: 1s;
+}
+.homeContainer > section > #second {
+  opacity: 0;
+  animation: opacityFade 1s ease-in forwards;
+  animation-delay: 2s;
+}
+.homeContainer > section > #third {
+  opacity: 0;
+  animation: opacityFade 1s ease-in forwards;
+  animation-delay: 3s;
 }
 .homeContainer button {
   padding: 0.5rem 1rem;
@@ -52,3 +70,4 @@
     transform: translateY(0px);
   }
 }
+
