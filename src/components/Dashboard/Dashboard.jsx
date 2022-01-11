@@ -19,7 +19,13 @@ function Dashboard({ data, setData }) {
   // useEffect(() => {
   //   return data;
   // }, [data]);
-
+  function currencyFormat(num) {
+    return '$' + num.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  }
+  function timeFormat(time) {
+    
+  }
+  console.log()
   return (
     <div className={styles.dbContainer}>
       <h1>Welcome back, {name}!</h1>
@@ -70,7 +76,7 @@ function Dashboard({ data, setData }) {
                 <td id='td-interviewer'>{element.interviewer}</td>
                 <td id='td-email'>{element.interviewerEmail}</td>
                 <td id='td-job-title'>{element.jobTitle}</td>
-                <td id='td-salary'>{element.salary}</td>
+                <td id='td-salary'>{currencyFormat(element.salary)}</td>
                 {/* <td id='td-remote'>{element.remote}</td>
               <td id='td-second-interview'>{element.secondInterview}</td> */}
               </tr>

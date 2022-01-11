@@ -87,6 +87,7 @@ function AddInterview({ data, setData }) {
             value={newInterview.company}
             onChange={companyChange}
             autoComplete='off'
+            placeholder='Company Name'
           />
           {/* Interviewer */}
           <label htmlFor='interviewer'>Interviewer Name: </label>
@@ -96,6 +97,7 @@ function AddInterview({ data, setData }) {
             value={newInterview.interviewer}
             onChange={interviewerChange}
             autoComplete='off'
+            placeholder='First and Last'
           />
           {/* Interviewer Email */}
           <label htmlFor='interviewer-email'>Interviewer Email: </label>
@@ -105,6 +107,7 @@ function AddInterview({ data, setData }) {
             value={newInterview.intEmail}
             onChange={intEmailChange}
             autoComplete='off'
+            placeholder='interviewer_email@domain.com'
           />
           {/* Job Title */}
           <label htmlFor='job-title'>Job Title: </label>
@@ -114,6 +117,7 @@ function AddInterview({ data, setData }) {
             value={newInterview.jobTitle}
             onChange={jobTitleChange}
             autoComplete='off'
+            placeholder='Software Engineer'
           />
           {/* Salary */}
           <label htmlFor='salary'>Salary: </label>
@@ -123,7 +127,9 @@ function AddInterview({ data, setData }) {
             value={newInterview.salary}
             onChange={salaryChange}
             autoComplete='off'
+            placeholder='"50000"'
           />
+          {/* <p>No commas, or currency symbols</p> */}
           {/* Remote */}
           {/* <label htmlFor='remote'>Option For Remote Work? </label>
           <div className={styles.remoteContainer}>
