@@ -49,7 +49,7 @@
 }
 @keyframes fadeFromLeft {
   0% {
-    transform: translateX(-10px);
+    transform: translateX(-5px);
     opacity: 0;
   }
   100% {
@@ -59,7 +59,7 @@
 }
 @keyframes fadeFromRight {
   0% {
-    transform: translateX(10px);
+    transform: translateX(5px);
     opacity: 0;
   }
   100% {
