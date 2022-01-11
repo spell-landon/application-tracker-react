@@ -12,11 +12,15 @@
 }
 .homeContainer > p {
   width: 500px;
-  margin: 1rem auto 3rem auto;
+  /* margin: 1rem auto; */
   animation: opacityFade 1s ease-in forwards;
+}
+.homeContainer > section {
+  margin-top: 1rem;
 }
 .homeContainer button {
   padding: 0.5rem 1rem;
+  margin-top: 3rem;
   border: none;
   background-color: rgb(128, 136, 128);
   font-family: 'Playfair Display', serif;
