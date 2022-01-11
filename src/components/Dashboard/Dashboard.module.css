@@ -1,23 +1,30 @@
 .dbContainer {
-    height: 100%;
-    
+  height: calc(100vh - 50px);
+  padding: 1rem;
 }
 .dbContainer > h1 {
-    font-size: 24px;
+  font-size: 24px;
+  text-align: center;
+}
+.dbContainer > p {
+  font-size: 14px;
+  color: rgb(110, 110, 110);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .dbContainer i {
-    font-size: 12px;
+  font-size: 12px;
 }
 .dbContainer table {
-    width: 100%;
-    border: none;
-    /* background-color: blue; */
-
+  width: 100%;
+  border: none;
+  /* background-color: blue; */
 }
 .dbContainer > table > tbody {
-    /* background-color: white; */
+  /* background-color: white; */
 }
 .dbContainer > table > tbody > tr {
-    border-bottom: 1px solid black;
-    border: none;
+  border-bottom: 1px solid black;
+  border: none;
 }

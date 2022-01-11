@@ -21,32 +21,37 @@ function Dashboard({ data, setData }) {
 
   return (
     <div className={styles.dbContainer}>
-      <h1>
-        Welcome back, {user.username}! You last logged in on {user.lastLogIn}.
-      </h1>
+      <h1>Welcome back, {user.username}!</h1>
+      <p>
+        You last logged in on {user.lastLogIn}.
+      </p>
       <table className='table-sortable'>
         <thead>
           <tr>
+            <th>Date {/* <i className='fas fa-filter'></i> */}</th>
             <th>
-              Date <i className='fas fa-filter'></i>
+              Time
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             <th>
-              Time <i className='fas fa-filter'></i>
+              Company
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             <th>
-              Company <i className='fas fa-filter'></i>
+              Interviewer
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             <th>
-              Interviewer <i className='fas fa-filter'></i>
+              Email
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             <th>
-              Email <i className='fas fa-filter'></i>
+              Job Title
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             <th>
-              Job Title <i className='fas fa-filter'></i>
-            </th>
-            <th>
-              Salary <i className='fas fa-filter'></i>
+              Salary
+              {/* <i className='fas fa-filter'></i> */}
             </th>
             {/* <th>
               Remote <i className='fas fa-filter'></i>
