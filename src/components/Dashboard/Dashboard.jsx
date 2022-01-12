@@ -94,7 +94,7 @@ function Dashboard({ data }) {
     {
       field: 'jobTitle',
       headerName: 'Job Title',
-      width: 120,
+      width: 160,
       editable: true,
     },
     {
