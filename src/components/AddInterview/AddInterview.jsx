@@ -9,8 +9,8 @@ function AddInterview({ data, setData }) {
 
   const index = data.length;
   const [newInterview, setNewInterview] = useState({
-    index: index,
-    date: '',
+    id: index,
+    date: 'yyyy-mm-dd',
     time: '',
     company: '',
     interviewer: '',
@@ -33,7 +33,10 @@ function AddInterview({ data, setData }) {
   }
   function timeChange(event) {
     event.preventDefault();
-    setNewInterview({ ...newInterview, time: event.target.value });
+    setNewInterview({
+      ...newInterview,
+      time: event.target.value,
+    });
   }
   function companyChange(event) {
     event.preventDefault();
@@ -102,7 +105,7 @@ function AddInterview({ data, setData }) {
           {/* Interviewer Email */}
           <label htmlFor='interviewer-email'>Interviewer Email: </label>
           <input
-            type='text'
+            type='email'
             id='interviewer-email'
             value={newInterview.intEmail}
             onChange={intEmailChange}
