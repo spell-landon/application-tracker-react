@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styles from './AddInterview.module.css';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.development';
-import moment from 'moment';
 
 function AddInterview({ data, setData }) {
   const navigate = useNavigate();

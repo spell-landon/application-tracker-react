@@ -8,6 +8,28 @@ import { useState } from 'react';
 import { UserContext } from './UserContext';
 
 function App() {
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+
+    console.log('Your current position is:');
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`More or less ${crd.accuracy} meters.`);
+    console.log(pos);
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
   const [user, setUser] = useState({
     username: '',
     lasLogIn: '',
@@ -84,7 +106,7 @@ function App() {
           <Route path='/login' element={<Login />}></Route>
           <Route
             path='/dashboard'
-            element={<Dashboard data={data} setData={setData} />}></Route>
+            element={<Dashboard data={data} />}></Route>
           <Route
             path='/add-interview'
             element={<AddInterview data={data} setData={setData} />}></Route>

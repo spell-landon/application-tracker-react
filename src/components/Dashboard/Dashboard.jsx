@@ -3,17 +3,14 @@ import styles from './Dashboard.module.css';
 import { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
 import {
   DataGrid,
   GridActionsCellItem,
   GridToolbar,
-  GridRowParams,
 } from '@mui/x-data-grid';
-import clsx from 'clsx';
 
-function Dashboard({ data, setData }) {
-  const { user, setUser } = useContext(UserContext);
+function Dashboard({ data }) {
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
     if (user.username) {
@@ -21,7 +18,7 @@ function Dashboard({ data, setData }) {
     } else {
       navigate('/login');
     }
-  }, []);
+  }, [user.username, navigate]);
   const name = user.username.charAt(0).toUpperCase() + user.username.slice(1);
 
   // MUI DataGrid
@@ -34,14 +31,14 @@ function Dashboard({ data, setData }) {
     },
     []
   );
-  const deleteAll = React.useCallback(
-    (id) => () => {
-      setTimeout(() => {
-        setRows((prevRows) => prevRows.filter((row) => row.id !== id));
-      });
-    },
-    []
-  );
+  // const deleteAll = React.useCallback(
+  //   (id) => () => {
+  //     setTimeout(() => {
+  //       setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+  //     });
+  //   },
+  //   []
+  // );
   const currencyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

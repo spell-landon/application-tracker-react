@@ -2,11 +2,9 @@ import React from 'react';
 import styles from './Navigation.module.css';
 import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Navigation(props) {
-  const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
   function handleLogout() {
     setUser({ username: '', lastLogIn: '' });

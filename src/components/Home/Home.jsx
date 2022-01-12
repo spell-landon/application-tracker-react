@@ -6,7 +6,7 @@ import { UserContext } from '../../UserContext';
 import { Link } from 'react-router-dom';
 
 function Home(props) {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   function navigateLogin() {
     navigate('/login');
