@@ -2,17 +2,31 @@
   height: calc(100vh - 50px);
   padding: 1rem;
 }
-.dbContainer > h1 {
+.dbContainer > section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.dbContainer > section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  height: fit-content;
+  /* position: absolute; */
+}
+.dbContainer > section > div > h1 {
   font-size: 24px;
   text-align: center;
 }
-.dbContainer > p {
+.dbContainer > section > div > p {
   font-size: 14px;
   color: rgb(110, 110, 110);
   font-weight: 400;
   text-align: center;
   margin-bottom: 1rem;
 }
+
 .dbContainer i {
   font-size: 12px;
 }

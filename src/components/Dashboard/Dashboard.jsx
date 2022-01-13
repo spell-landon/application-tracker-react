@@ -3,13 +3,75 @@ import styles from './Dashboard.module.css';
 import { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
-import {
-  DataGrid,
-  GridActionsCellItem,
-  GridToolbar,
-} from '@mui/x-data-grid';
+import { DataGrid, GridActionsCellItem, GridToolbar } from '@mui/x-data-grid';
+import Button from '@mui/material/Button';
 
 function Dashboard({ data }) {
+  // //?------------ STATES
+  // const [weatherData, setWeatherData] = useState([]);
+  // const [latitude, setLatitude] = useState(null);
+  // const [longitude, setLongitude] = useState(null);
+  // //?------------ GEOLOCATION SECTION
+  // var options = {
+  //   enableHighAccuracy: true,
+  //   timeout: 5000,
+  //   maximumAge: 0,
+  // };
+  // // function success(pos) {
+  // //   var crd = pos.coords;
+  // //   console.log('Your current position is:');
+  // //   console.log(`Latitude : ${crd.latitude}`);
+  // //   console.log(`Longitude: ${crd.longitude}`);
+  // //   console.log(`More or less ${crd.accuracy} meters.`);
+  // //   console.log(pos);
+  // // }
+  // function successLatitude(pos) {
+  //   var crd = pos.coords;
+  //   let latitude = crd.latitude;
+  //   setLatitude(latitude);
+  //   return latitude;
+  // }
+  // function successLongitude(pos) {
+  //   var crd = pos.coords;
+  //   let longitude = crd.longitude;
+  //   setLongitude(longitude);
+  //   return longitude;
+  // }
+  // // function error(err) {
+  // //   console.warn(`ERROR(${err.code}): ${err.message}`);
+  // // }
+  // // navigator.geolocation.getCurrentPosition(success, error, options);
+  // //?------------ WEATHER DATA
+  // const apiInfo = {
+  //   key: process.env.REACT_APP_OW_KEY,
+  // };
+  // function getWeather() {
+  //   const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiInfo.key}`;
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log(res);
+  //       setWeatherData(res);
+  //       console.log(weatherData);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     })
+  //     .finally(() => {
+  //       return;
+  //     });
+  // }
+  // useEffect(() => {
+  //   if (!longitude && !latitude) {
+  //     navigator.geolocation.getCurrentPosition(successLatitude);
+  //     navigator.geolocation.getCurrentPosition(successLongitude);
+  //   } else if (longitude && latitude) {
+  //     getWeather();
+  //   }
+  // }, [longitude, latitude]);
+
+  console.log(data);
+
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
@@ -64,25 +126,25 @@ function Dashboard({ data }) {
       field: 'date',
       headerName: 'Date',
       type: 'date',
-      width: 120,
+      width: 110,
       editable: true,
     },
     {
       field: 'time',
       headerName: 'Time',
-      width: 120,
+      width: 110,
       editable: true,
     },
     {
       field: 'company',
       headerName: 'Company',
-      width: 120,
+      width: 110,
       editable: true,
     },
     {
       field: 'interviewer',
       headerName: 'Interviewer',
-      width: 150,
+      width: 140,
       editable: true,
     },
     {
@@ -101,7 +163,7 @@ function Dashboard({ data }) {
       field: 'salary',
       headerName: 'Salary',
       type: 'number',
-      width: 120,
+      width: 110,
       editable: true,
       ...usdPrice,
     },
@@ -111,7 +173,7 @@ function Dashboard({ data }) {
       type: 'actions',
       getActions: (params) => [
         <GridActionsCellItem
-          icon={<i class='far fa-trash-alt'></i>}
+          icon={<i className='far fa-trash-alt'></i>}
           label='Delete'
           onClick={deleteUser(params.id)}
         />,
@@ -121,8 +183,13 @@ function Dashboard({ data }) {
 
   return (
     <div className={styles.dbContainer}>
-      <h1>Welcome back, {name}!</h1>
-      <p>You last logged in on {user.lastLogIn}.</p>
+      <section>
+        <div>
+          <h1>Welcome back, {name}!</h1>
+          <p>You last logged in on {user.lastLogIn}.</p>
+        </div>
+        {/* {weatherData.length !== 0 ? <p className={styles.temp}>{weatherData?.main?.temp}°F</p> : null} */}
+      </section>
       <div
         style={{
           height: 'calc(100vh - 150px)',
@@ -140,7 +207,7 @@ function Dashboard({ data }) {
           onColumnWidthChange
           components={{ Toolbar: GridToolbar }}
           sx={{
-            fontFamily: 'Playfair Display',
+            // fontFamily: 'Playfair Display',
             '& .MuiDataGrid-columnHeader': {
               backgroundColor: 'rgba( 241, 241, 241, 100%)',
             },

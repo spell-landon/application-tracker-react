@@ -8,28 +8,7 @@ import { useState } from 'react';
 import { UserContext } from './UserContext';
 
 function App() {
-  var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
-
-  function success(pos) {
-    var crd = pos.coords;
-
-    console.log('Your current position is:');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
-    console.log(pos);
-  }
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
-
+  //?------------ STATES
   const [user, setUser] = useState({
     username: '',
     lasLogIn: '',
@@ -44,6 +23,7 @@ function App() {
       interviewerEmail: 'Myers.David@gmail.com',
       jobTitle: 'Software Engineer',
       salary: '50000',
+      info: 'hello'
     },
     {
       id: 1,
@@ -96,7 +76,7 @@ function App() {
       salary: '81000',
     },
   ]);
-  console.log(data);
+
   return (
     <div className='App'>
       <UserContext.Provider value={{ user, setUser }}>
@@ -104,9 +84,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route
-            path='/dashboard'
-            element={<Dashboard data={data} />}></Route>
+          <Route path='/dashboard' element={<Dashboard data={data} />}></Route>
           <Route
             path='/add-interview'
             element={<AddInterview data={data} setData={setData} />}></Route>
